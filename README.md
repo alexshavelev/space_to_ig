@@ -1,4 +1,4 @@
-# Bitly url shortener
+# Download photos and post to IG
 
 Project can be download photos from spacex and hubble apis and post them to IG
 
