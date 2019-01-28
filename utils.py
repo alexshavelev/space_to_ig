@@ -1,6 +1,6 @@
 import os
 import requests
-from .config import IMAGES_FOLDER
+from config import IMAGES_FOLDER
 
 
 def create_images_folder():

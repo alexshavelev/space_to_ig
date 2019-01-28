@@ -1,6 +1,6 @@
 import requests
-from .config import HUBBLE_API_URL, HUBBLE_FILE_TEMPLATE
-from .utils import download_and_save_image
+from config import HUBBLE_API_URL, HUBBLE_FILE_TEMPLATE
+from utils import download_and_save_image
 
 
 def get_hubble_collection_photos_ids(collection_name):

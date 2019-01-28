@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 from instabot import Bot
-from .config import IMAGES_FOLDER
+from config import IMAGES_FOLDER
 
 if __name__ == '__main__':
     load_dotenv()

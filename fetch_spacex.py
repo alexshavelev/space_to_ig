@@ -1,6 +1,6 @@
 import requests
-from .config import SPACEX_API_URL, SPACEX_FILE_TEMPLATE
-from .utils import download_and_save_image
+from config import SPACEX_API_URL, SPACEX_FILE_TEMPLATE
+from utils import download_and_save_image
 
 
 def fetch_spacex_last_launch():
