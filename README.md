@@ -1,33 +1,40 @@
 # Bitly url shortener
 
-Project can be used to shorten url and then check its clicks count
+Project can be download photos from spacex and hubble apis and post them to IG
 
 ### How to install
-
-Register on http://bitly.com and click `GENERATE ACCES TOKEN`. 
-
-It looks like `'dcdf6d1bdsd770fb069703f5a5e1c51e37ef67a8'`.
-
-Then create '.env' file and put token here in next format `'TOKEN='<your token>''`
-
-
 Python3 should be already installed.
-Then use `pip` (or `pip3`, if there is a conflict with Python2) to install dependencies:
+Then use `pip` (or `pip3`, if there is a conflict with Python2) to install dependencies
+
 ```
 git clone ..
 cd /path/to/dir
 pip install -r requirements.txt
 ```
+
+Then create '.env' file and put here IG username and password in next format 
+```
+USERNAME=<login>
+PASSWORD=<pass>
+```
+
 ### How to use
-Create short link:
+Collect photos from SpaceX:
 ```
-python main.py https://test.com
-http://bit.ly/2S6axwL
+python fetch_spacex.py
 ```
-See click count:
+Collect photos from Hubble:
 ```
-python main.py bit.ly/2S6axwL
-0
+python fetch_hubble.py
+```
+Upload to IG page:
+```
+python post_to_instagram.py
+```
+
+Or do all steps together
+```
+python fetch_spacex.py && python fetch_hubble.py && python post_to_instagram.py
 ```
 
 ### Project Goals
