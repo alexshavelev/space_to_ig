@@ -6,3 +6,4 @@ main.py
 /images
 *.log
 __*
+.idea
