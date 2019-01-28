@@ -1,0 +1,6 @@
+IMAGES_FOLDER = 'images'
+IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/3/3f/HST-SM4.jpeg'
+SPACEX_API_URL = 'https://api.spacexdata.com/v3/launches/latest'
+SPACEX_FILE_TEMPLATE = 'spacex{}.jpg'
+HUBBLE_API_URL = 'http://hubblesite.org/api/v3/{}/{}'
+HUBBLE_FILE_TEMPLATE = '{}.{}'
