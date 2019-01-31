@@ -3,16 +3,14 @@ import requests
 from config import IMAGES_FOLDER
 
 
-def create_images_folder():
-    if not os.path.exists(IMAGES_FOLDER):
-        os.mkdir(IMAGES_FOLDER)
-
-
 def download_and_save_image(image_name, image_url):
     res = requests.get(image_url)
     if res.ok:
         image_bin = res.content
-        create_images_folder()
+        try:
+            os.mkdir(IMAGES_FOLDER)
+        except FileExistsError:
+            pass
         save_image(image_bin, IMAGES_FOLDER, image_name)
 
 
