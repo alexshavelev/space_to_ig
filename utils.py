@@ -9,14 +9,11 @@ def create_images_folder():
 
 
 def download_and_save_image(image_name, image_url):
-    image_bin = download_image(image_url)
-    create_images_folder()
-    save_image(image_bin, IMAGES_FOLDER, image_name)
-
-
-def download_image(url):
-    res = requests.get(url)
-    return res.content
+    res = requests.get(image_url)
+    if res.ok:
+        image_bin = res.content
+        create_images_folder()
+        save_image(image_bin, IMAGES_FOLDER, image_name)
 
 
 def save_image(image, file_path, file_name):

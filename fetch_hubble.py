@@ -1,4 +1,5 @@
 import requests
+import os
 from config import HUBBLE_API_URL, HUBBLE_FILE_TEMPLATE
 from utils import download_and_save_image
 
@@ -6,21 +7,17 @@ from utils import download_and_save_image
 def get_hubble_collection_photos_ids(collection_name):
     url = HUBBLE_API_URL.format('images', collection_name)
     res = requests.get(url)
-    images_ids = []
     if res.ok:
-        for photo in res.json():
-            images_ids.append(photo['id'])
-    return images_ids
+        images_ids = [photo['id'] for photo in res.json()]
+        return images_ids
 
 
 def get_hubble_image_url(image_id):
     url = HUBBLE_API_URL.format('image', image_id)
     res = requests.get(url)
-    image_urls = []
     if res.ok:
-        for image_file in res.json()['image_files']:
-            image_urls.append(image_file['file_url'])
-    return image_urls[-1]
+        image_urls = [image_file['file_url'] for image_file in res.json()['image_files']]
+        return image_urls[-1]
 
 
 def get_image_format(image_url):
@@ -29,7 +26,7 @@ def get_image_format(image_url):
 
 
 def get_hubble_image_name(image_url, image_id):
-    image_format = get_image_format(image_url)
+    _, image_format = os.path.splitext(image_url)
     return HUBBLE_FILE_TEMPLATE.format(image_id, image_format)
 
 
