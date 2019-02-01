@@ -20,11 +20,6 @@ def get_hubble_image_url(image_id):
         return image_urls[-1]
 
 
-def get_image_format(image_url):
-    _, image_format = image_url[-10:].split('.')
-    return image_format
-
-
 def get_hubble_image_name(image_url, image_id):
     _, image_format = os.path.splitext(image_url)
     return HUBBLE_FILE_TEMPLATE.format(image_id, image_format)
